@@ -11,7 +11,7 @@ namespace Methods
                 //  The user will enter 
                 //      Y, M, or D to get the Year, Month or Day of the current date
                 //      h, m, or s to get the hour, minute, or second of the current time
-                string part = Utils.GetInput("What part of the date are you interested in? (M or D or Y for month day or year): ");
+                string part = Utils.GetInput("What part of the date are you interested in?: ");
 
                 //  this method will take the part of the date requested and from the current date return the units for that date part or time part
                 int timeUnit = GetDatePart(part);
@@ -34,6 +34,18 @@ namespace Methods
             if (part == "D")
             {
                numberDate = DateTime.Today.Day;
+            }
+            if (part == "h")
+            {
+                numberDate = DateTime.Now.Hour;
+            }
+            if(part == "m")
+            {
+                numberDate = DateTime.Now.Minute;
+            }
+            if(part == "s")
+            {
+                numberDate = DateTime.Now.Second;
             }
             return numberDate;
         }
